@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chess vs AI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+    <h1>Chess vs AI</h1>
+    <p class="subtitle">Play as White against the computer</p>
+    </header>
+    
+    <main>
+        <div class="top-bar">
+            <div class="difficulty-wrap">
+        <label for="diff-select">Difficulty</label>
+        <select id="diff-select">
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3" selected>Hard</option>
+        </select>
+        </div>
+        <button id="new-game-btn" onclick="newGame()">New Game</button>
+    </div>
+
+    <div class="captured-row">
+        <span class="cap-label">AI captured:</span>
+        <div id="captured-black"></div>
+    </div>
+
+    <div id="board-wrap">
+        <div id="board"></div>
+    </div>
+
+    <div class="captured-row">
+        <span class="cap-label">You captured:</span>
+        <div id="captured-white"></div>
+    </div>
+
+    <div id="status">Your turn — play as White</div>
+
+    <div id="promo-modal" style="display:none;">
+        <p>Choose promotion piece</p>
+        <div id="promo-choices">
+            <span onclick="doPromo('q')" title="Queen">&#9819;</span>
+            <span onclick="doPromo('r')" title="Rook">&#9820;</span>
+            <span onclick="doPromo('b')" title="Bishop">&#9821;</span>
+            <span onclick="doPromo('n')" title="Knight">&#9822;</span>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>Built with Vanilla JS &mdash; Minimax AI with Alpha-Beta Pruning</p>
+</footer>
+
+<script src="chess.js"></script>
+</body>
+</html>
