@@ -1,0 +1,182 @@
+*{
+  margin:0;
+  padding:0;box-sizing:border-box;
+}
+
+:root{
+  --bg:#faf8ef;
+  --board:#bbada0;
+  --empty:#cdc1b4;
+  --text:#776e65;
+}
+
+
+body{
+  background:var(--bg);
+  font-family:Arial,sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:500px;
+}
+
+.title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+h1{
+  font-size:72px;
+  color:var(--text);
+}
+
+.subtitle{
+  margin-bottom:18px;
+  color:#8b8178;
+}
+
+.scores{
+  display:flex;
+  gap:10px;
+}
+
+.score-box{
+  background:#bbada0;
+  color:white;
+  padding:12px 18px;
+  border-radius:8px;
+  text-align:center;
+}
+
+.score-box span{
+  font-size:12px;
+  display:block;
+}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:15px;
+  align-items:center;
+}
+
+button{
+  border:none;
+  padding:12px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#new-btn{
+  background:#8f7a66;
+  color:white;
+}
+
+#undo-btn{
+  background:#cdc1b4;
+}
+
+.sizes{
+  margin-left:auto;
+  display:flex;
+  gap:6px;
+}
+
+.size-btn{
+  background:#ddd0c4;
+}
+
+.size-btn.active{
+  background:#8f7a66;
+  color:white;
+}
+
+.board-wrapper{
+  background:var(--board);
+  padding:10px;
+  border-radius:10px;
+}
+
+#board{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  width:100%;
+  aspect-ratio:1;
+}
+
+.cell{
+  background:var(--empty);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:2rem;
+}
+.cell[data-val="2"]{background:#eee4da;}
+.cell[data-val="4"]{background:#ede0c8;}
+.cell[data-val="8"]{
+  background:#f2b179;
+  color:white;
+}
+
+.cell[data-val="16"]{
+  background:#f59563;
+  color:white;
+}
+.cell[data-val="32"]{
+  background:#f67c5f;
+  color:white;
+}
+
+.cell[data-val="64"]{
+  background:#f65e3b;
+  color:white;
+}
+
+.cell[data-val="128"],
+.cell[data-val="256"],
+.cell[data-val="512"]{
+  background:#edcf72;
+  color:white;
+  font-size:1.6rem;
+}
+.cell[data-val="1024"],
+.cell[data-val="2048"]{
+  background:#edc22e;
+  color:white;
+  font-size:1.4rem;
+}
+.cell[data-super="1"]{
+  background:#3c3a32;
+  color:white;
+  font-size:1.2rem;
+}
+
+.hint{
+  text-align:center;
+  margin-top:15px;
+  color:#8b8178;
+}
+
+@media(max-width:500px){
+h1
+{
+  font-size:54px;
+}
+
+.cell{
+  font-size:1.5rem;
+}
+}
