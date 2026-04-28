@@ -1,0 +1,105 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:      #0a0a0f;
+    --surface: #111118;
+    --border:  #1e1e2e;
+    --accent:  #00f5ff;
+    --text:    #e0e0ff;
+    --muted:   #555577;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    color: var(--accent);
+    text-shadow: 0 0 24px rgba(0,245,255,.5);
+    text-transform: uppercase;
+}
+
+/* HUD */
+.hud { display: flex; gap: 12px; width: 100%; justify-content: center; }
+.hud-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: center;
+    flex: 1;
+}
+.hud-val {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+.lives-display .hud-val { font-size: 1rem; color: #f87171; letter-spacing: 3px; }
+.hud-lbl {
+    display: block;
+    font-size: .55rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+/* Canvas */
+.canvas-wrapper {
+    border: 1px solid rgba(0,245,255,.2);
+    border-radius: 10px;  
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 0 0 40px rgba(0,245,255,.06);
+}
+#game-canvas { display: block; cursor: none; }
+
+/* Hint */
+.hint {
+    font-size: .73rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+/* Buttons */
+.controls { display: flex; gap: 10px; }
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: all .18s;
+    font-family: inherit;
+    letter-spacing: 1px;
+}
+.btn-primary { background: var(--accent); color: #0a0a0f; border-color: var(--accent); }
+.btn-primary:hover { opacity: .85; }
+.btn-outline { background: transparent; border-color: var(--border); color: var(--muted); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 500px) {
+    #game-canvas { width: 100%; height: auto; }
+    .canvas-wrapper { width: 100%; }
+}

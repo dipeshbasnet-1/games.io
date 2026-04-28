@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Breakout</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+        <h1>Breakout</h1>
+    </header>
+    
+    <div class="hud">
+        <div class="hud-item">
+            <span class="hud-val" id="score">0</span>
+            <span class="hud-lbl">Score</span>
+    </div>
+    <div class="hud-item lives-display">
+        <span class="hud-val" id="lives-icons">♥ ♥ ♥</span>
+        <span class="hud-lbl">Lives</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-val" id="level">1</span>
+        <span class="hud-lbl">Level</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-val" id="best">0</span>
+        <span class="hud-lbl">Best</span>
+    </div>
+    </div>
+    
+    <div class="canvas-wrapper">
+        <canvas id="game-canvas" width="480" height="520"></canvas>
+    </div>
+    
+    <p class="hint" id="hint">Move mouse or use ← → keys to control paddle · Click or Space to start</p>
+    
+    <div class="controls">
+        <button class="btn btn-primary" id="new-btn">New Game</button>
+        <button class="btn btn-outline" id="pause-btn">Pause</button>
+    </div>
+    </div>
+
+<script src="breakout.js"></script>
+</body>
+</html>
