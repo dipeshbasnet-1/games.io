@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Typing Speed</h1>
+        <p class="subtitle">How fast can you type?</p>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <span class="stat-val" id="wpm">0</span>
+            <span class="stat-lbl">WPM</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-val" id="raw-wpm">0</span>
+            <span class="stat-lbl">Raw WPM</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-val" id="accuracy">100%</span>
+            <span class="stat-lbl">Accuracy</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-val" id="timer-display">60s</span>
+            <span class="stat-lbl">Time Left</span>
+        </div>
+    </div>
+
+    <!-- Timer bar -->
+    <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Mode selector -->
+    <div class="mode-bar">
+        <div class="mode-group">
+            <span class="mode-label">Time:</span>
+            <button class="mode-btn" data-type="time" data-val="15">15s</button>
+            <button class="mode-btn" data-type="time" data-val="30">30s</button>
+            <button class="mode-btn active" data-type="time" data-val="60">60s</button>
+            <button class="mode-btn" data-type="time" data-val="120">120s</button>
+        </div>
+        <div class="mode-group">
+            <span class="mode-label">Mode:</span>
+            <button class="mode-btn active" data-type="mode" data-val="words">Words</button>
+            <button class="mode-btn" data-type="mode" data-val="quotes">Quotes</button>
+            <button class="mode-btn" data-type="mode" data-val="code">Code</button>
+        </div>
+    </div>
+
+    <!-- Text display -->
+    <div class="text-area" id="text-display"></div>
+
+    <!-- Input -->
+    <input
+        type="text"
+        id="type-input"
+        class="type-input"
+        placeholder="Start typing to begin the test…"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+    />
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn btn-primary" id="restart-btn">↺ Restart</button>
+        <button class="btn btn-outline" id="next-btn">Next Text →</button>
+    </div>
+
+    <!-- Result panel (hidden) -->
+    <div class="result-panel hidden" id="result-panel">
+        <h2>Your Results</h2>
+        <div class="result-grid">
+            <div class="result-item">
+                <span class="result-big" id="res-wpm">0</span>
+                <span class="result-lbl">WPM</span>
+            </div>
+        
+            <div class="result-item">
+                <span class="result-big" id="res-raw">0</span>
+                <span class="result-lbl">Raw WPM</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-big" id="res-acc">0%</span>
+                <span class="result-lbl">Accuracy</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-big" id="res-chars">0</span>
+                <span class="result-lbl">Chars</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-big" id="res-errors">0</span>
+                <span class="result-lbl">Errors</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-big" id="res-grade">-</span>
+                <span class="result-lbl">Grade</span>
+            </div>
+        </div>
+        <div class="best-row" id="best-row"></div>
+        <button class="btn btn-primary" id="try-again-btn">Try Again</button>
+    </div>
+</div>
+
+<script src="typing.js"></script>
+</body>
+</html>

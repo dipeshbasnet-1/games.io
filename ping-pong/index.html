@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ping Pong</title>
+
+  <!-- Font for arcade feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Ping Pong</h1>
+
+<!-- 🔥 SCOREBOARD -->
+<div class="scoreboard">
+
+  <div class="score-box left">
+    <div class="label" id="leftLabel">YOU</div>
+    <div class="score" id="leftScore">0</div>
+  </div>
+
+  <div class="center-text" id="centerText">
+    ⚡ GAME ON ⚡
+  </div>
+
+  <div class="score-box right">
+    <div class="label" id="rightLabel">AI</div>
+    <div class="score" id="rightScore">0</div>
+  </div>
+
+</div>
+
+<canvas id="c" width="600" height="400"></canvas>
+
+<!-- Controls -->
+<div class="panel">
+
+  <div class="row">
+    <span>Mode:</span>
+    <button class="active-btn" onclick="setMode('ai',this)">VS AI</button>
+    <button onclick="setMode('2p',this)">2 Player</button>
+  </div>
+
+  <div class="row">
+    <span>AI:</span>
+    <button class="active-btn" onclick="setAI('easy',this)">Easy</button>
+    <button onclick="setAI('medium',this)">Medium</button>
+    <button onclick="setAI('hard',this)">Hard</button>
+    <button onclick="setAI('insane',this)">Insane</button>
+  </div>
+
+  <button onclick="init()">Restart</button>
+
+</div>
+
+<div id="msg">
+  Left paddle: W/S | Right paddle: ↑/↓ (2P) or mouse | Space to start
+</div>
+
+<script src="pingpong.js"></script>
+</body>
+</html>

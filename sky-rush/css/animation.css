@@ -1,0 +1,100 @@
+/* SKY RUSH — animations.css*/
+
+/* ── Logo icon floating ── */
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* ── Pulse glow on buttons ── */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0,212,255,0.5); }
+    50%       { box-shadow: 0 0 44px rgba(0,212,255,0.9), 0 0 80px rgba(0,212,255,0.3); }
+}
+.pulse { animation: pulseGlow 1.8s ease-in-out infinite; }
+
+/* ── Icon pulse (shield, magnet) ── */
+@keyframes pulseIcon {
+    0%, 100% { opacity: 1;   transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(1.15); }
+}
+
+/* ── Score pop when coin collected ── */
+@keyframes scorePop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.4); color: #ffd700; }
+    100% { transform: scale(1); }
+}
+.score-pop { animation: scorePop 0.35s ease-out; }
+
+/* ── Screen fade in ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.45s ease-out forwards; }
+
+/* ── Game over card entrance ── */
+
+@keyframes cardSlideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.gameover-card { animation: cardSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* ── Coin collect flash ── */
+@keyframes coinFlash {
+    0%   { opacity: 1; transform: translateY(0) scale(1); }
+    50%  { opacity: 1; transform: translateY(-20px) scale(1.3); }
+    100% { opacity: 0; transform: translateY(-40px) scale(0.5); }
+}
+
+/* ── Danger flash on near miss ── */
+@keyframes dangerFlash {
+    0%, 100% { border-color: transparent; }
+    50%       { border-color: rgba(255,45,120,0.8); box-shadow: inset 0 0 40px rgba(255,45,120,0.3); }
+}
+
+.danger-flash {
+    animation: dangerFlash 0.25s ease-out 3;
+    border: 3px solid transparent;
+}
+
+/* ── Shield hit ripple ── */
+@keyframes shieldHit {
+    0%   { box-shadow: 0 0 0 0 rgba(0,212,255,0.8); }
+    100% { box-shadow: 0 0 0 40px rgba(0,212,255,0); }
+}
+.shield-hit { animation: shieldHit 0.5s ease-out; }
+
+/* ── Speed boost glow ── */
+@keyframes speedGlow {
+    0%, 100% { filter: brightness(1); }
+    50%       { filter: brightness(1.3) hue-rotate(30deg); }
+}
+
+/* ── Countdown numbers ── */
+@keyframes countdownPop {
+    0%   { transform: scale(2.5); opacity: 0; }
+    30%  { transform: scale(1);   opacity: 1; }
+    70%  { transform: scale(1);   opacity: 1; }
+    100% { transform: scale(0.5); opacity: 0; }
+}
+
+#countdown-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: #00d4ff;
+    text-shadow: 0 0 40px #00d4ff;
+    pointer-events: none;
+    z-index: 30;
+}
+
+#countdown-display.pop { animation: countdownPop 0.8s ease-out forwards; }

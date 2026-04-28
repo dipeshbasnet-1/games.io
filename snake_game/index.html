@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Snake</h1>
+        <p class="subtitle">Use arrow keys or WASD to move</p>
+    </header>
+    
+    <div class="hud">
+        <div class="hud-item">
+        <span class="hud-value" id="score">0</span>
+        <span class="hud-label">Score</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-value" id="high-score">0</span>
+        <span class="hud-label">Best</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-value" id="length">3</span>
+        <span class="hud-label">Length</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-value" id="level">1</span>
+        <span class="hud-label">Level</span>
+    </div>
+    </div>
+    
+    <div class="canvas-wrapper">
+        <canvas id="game-canvas" width="420" height="420"></canvas>
+        <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title">Snake</h2>
+            <p id="overlay-msg">Ready to play?</p>
+            <button class="play-btn" id="start-btn">▶ Start Game</button>
+        </div>
+        </div>
+    </div>
+    
+    <div class="speed-control">
+        <label>Speed:</label>
+        <div class="speed-btns">
+            <button class="speed-btn" data-speed="1">Slow</button>
+            <button class="speed-btn active" data-speed="2">Normal</button>
+            <button class="speed-btn" data-speed="3">Fast</button>
+            <button class="speed-btn" data-speed="4">Insane</button>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn btn-primary" id="new-btn">New Game</button>
+        <button class="btn btn-outline" id="pause-btn">Pause</button>
+    </div>
+
+    <!-- Mobile D-pad -->
+    <div class="dpad">
+        <div class="dpad-row">
+            <button class="dpad-btn" id="up-btn">▲</button>
+        </div>
+    <div class="dpad-row">
+        <button class="dpad-btn" id="left-btn">◀</button>
+        <button class="dpad-btn center" id="down-btn">▼</button>
+        <button class="dpad-btn" id="right-btn">▶</button>
+    </div>
+    </div>
+</div>
+
+<script src="snake.js"></script>
+</body>
+</html>

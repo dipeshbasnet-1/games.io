@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Sudoku Solver</h1>
+        <p class="subtitle">Play manually or let the algorithm solve it</p>
+    </header>
+
+    <div class="difficulty-bar">
+        <span class="diff-label">Difficulty:</span>
+        <button class="diff-btn active" data-level="easy">Easy</button>
+        <button class="diff-btn" data-level="medium">Medium</button>
+        <button class="diff-btn" data-level="hard">Hard</button>
+    </div>
+
+    <div class="info-bar">
+        <div class="info-item">
+        <span class="info-value" id="error-count">0</span>
+        <span class="info-label">Errors</span>
+    </div>
+    <div class="info-item">
+        <span class="info-value" id="timer">00:00</span>
+        <span class="info-label">Timer</span>
+    </div>
+        <div class="info-item">
+        <span class="info-value" id="status-text">Playing</span>
+        <span class="info-label">Status</span>
+    </div>
+    </div>
+
+    <div class="board-wrapper">
+        <div id="board"></div>
+    </div>
+
+    <div class="numpad" id="numpad"></div>
+
+    <div class="controls">
+        <button class="btn btn-primary" id="solve-btn">⚡ Solve</button>
+        <button class="btn btn-secondary" id="step-btn">👣 Step</button>
+        <button class="btn btn-outline" id="validate-btn">✔ Validate</button>
+        <button class="btn btn-outline" id="hint-btn">💡 Hint</button>
+        <button class="btn btn-outline" id="clear-btn">🗑 Clear</button>
+        <button class="btn btn-danger" id="new-btn">🔄 New Puzzle</button>
+    </div>
+
+    <div id="message" class="message hidden"></div>
+</div>
+
+<script src="sudoku.js"></script>
+</body>
+</html>

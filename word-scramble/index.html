@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Word Scramble</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Word Scramble</h1>
+        <p class="subtitle">Unscramble the letters to find the hidden word</p>
+    </header>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+        <div class="stat">
+            <span class="stat-val" id="score">0</span>
+            <span class="stat-lbl">Score</span>
+        </div>
+        
+    <div class="stat">
+        <span class="stat-val" id="word-num">1 / 10</span>
+        <span class="stat-lbl">Word</span>
+    </div>
+    <div class="stat">
+        <span class="stat-val" id="streak">0</span>
+        <span class="stat-lbl">Streak 🔥</span>
+    </div>
+    <div class="stat">
+        <span class="stat-val" id="best">0</span>
+        <span class="stat-lbl">Best</span>
+    </div>
+    </div>
+
+    <!-- Category bar -->
+    <div class="cat-bar">
+        <span class="cat-label">Category:</span>
+        <button class="cat-btn active" data-cat="cs">CS / Tech</button>
+        <button class="cat-btn" data-cat="animals">Animals</button>
+        <button class="cat-btn" data-cat="countries">Countries</button>
+        <button class="cat-btn" data-cat="mixed">Mixed</button>
+    </div>
+
+    <!-- Timer bar -->
+    <div class="timer-wrap">
+        <div class="timer-track">
+            <div class="timer-fill" id="timer-fill"></div>
+        </div>
+        <span class="timer-num" id="timer-num">30</span>
+    </div>
+
+    <!-- Word card -->
+    <div class="word-card" id="word-card">
+        <p class="hint-text" id="hint-text">Hint: …</p>
+        <div class="scrambled-display" id="scrambled-display"></div>
+    </div>
+
+    <!-- Answer slots -->
+    <div class="answer-area">
+        <div class="answer-slots" id="answer-slots"></div>
+    </div>
+
+    <!-- Letter tiles -->
+    <div class="tile-area">
+        <div class="tile-row" id="tile-row"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn btn-primary"  id="check-btn">✔ Check</button>
+        <button class="btn btn-outline"  id="clear-btn">✕ Clear</button>
+        <button class="btn btn-outline"  id="hint-btn">💡 Hint</button>
+        <button class="btn btn-secondary" id="skip-btn">⏭ Skip</button>
+    </div>
+
+    <!-- Feedback -->
+    <div class="feedback hidden" id="feedback"></div>
+
+    <!-- Result screen -->
+    <div class="result-screen hidden" id="result-screen">
+        <div class="result-icon" id="result-icon">🎉</div>
+        <h2 id="result-title">Round Complete!</h2>
+        <p id="result-desc"></p>
+        <div class="result-stats">
+            <div class="rs"><span class="rs-val" id="rs-score">0</span><span class="rs-lbl">Score</span></div>
+            <div class="rs"><span class="rs-val" id="rs-correct">0</span><span class="rs-lbl">Correct</span></div>
+            <div class="rs"><span class="rs-val" id="rs-streak">0</span><span class="rs-lbl">Best Streak</span></div>
+            <div class="rs"><span class="rs-val" id="rs-time">0s</span><span class="rs-lbl">Avg Time</span></div>
+        </div>
+        <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+    </div>
+
+</div>
+
+<script src="scramble.js"></script>
+</body>
+</html>

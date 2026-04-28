@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sky Rush</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!--  SCREENS  -->
+<!-- START SCREEN -->
+<div id="start-screen" class="screen active">
+    <div class="screen-bg">
+    </div>
+    <div class="logo-wrap">
+        <div class="logo-icon">🚀</div>
+        <h1 class="logo-text">SKY<span>RUSH</span></h1>
+        <p class="tagline">Run. Dodge. Survive.</p>
+    </div>
+    <div class="start-actions">
+        <button id="btn-start" class="btn-primary pulse">PLAY NOW</button>
+        <div class="high-score-display">
+            🏆 Best: <span id="display-best">0</span>
+        </div>
+        <div class="controls-hint">
+            <span>← → Arrow Keys / A D</span>
+            <span>↑ Space / W = Jump</span>
+            <span>↓ / S = Slide</span>
+        </div>
+    </div>
+    <div class="lanes-preview">
+        <div class="lane-line"></div>
+        <div class="lane-line"></div>
+        <div class="lane-line"></div>
+    </div>
+</div>
+
+<!-- GAME SCREEN -->
+
+<div id="game-screen" class="screen">
+    <!-- HUD -->
+    <div id="hud">
+        <div class="hud-left">
+            <div class="score-box">
+                <span class="hud-label">SCORE</span>
+                <span id="score-display">0</span>
+            </div>
+            <div class="score-box">
+                <span class="hud-label">COINS</span>
+                <span id="coin-display">🪙 0</span>
+            </div>
+        </div>
+        <div class="hud-right">
+            <div class="score-box">
+                <span class="hud-label">SPEED</span>
+                <span id="speed-display">1x</span>
+            </div>
+            <div id="shield-indicator" class="hidden">🛡️</div>
+            <div id="magnet-indicator" class="hidden">🧲</div>
+        </div>
+    </div>
+
+    <!-- CANVAS -->    
+    <canvas id="game-canvas"></canvas>
+
+    <!-- PAUSE BUTTON -->
+    <button id="btn-pause" class="btn-pause">⏸</button>
+</div>
+
+<!-- PAUSE SCREEN -->
+<div id="pause-screen" class="screen overlay-screen hidden">
+    <div class="overlay-card">
+        <h2>PAUSED</h2>
+        <button id="btn-resume" class="btn-primary">RESUME</button>
+        <button id="btn-quit" class="btn-secondary">QUIT</button>
+    </div>
+</div>
+
+
+<!-- GAME OVER SCREEN -->
+
+<div id="gameover-screen" class="screen overlay-screen hidden">
+    <div class="overlay-card gameover-card">
+        <div class="crash-icon">💥</div>
+        <h2>GAME OVER</h2>
+        <div class="result-stats">
+            <div class="stat-row">
+                <span>Score</span>
+                <span id="final-score">0</span>
+            </div>
+            <div class="stat-row">
+                <span>Coins</span>
+                <span id="final-coins">0</span>
+            </div>
+            <div class="stat-row highlight">
+                <span>Best</span>
+                <span id="final-best">0</span>
+            </div>
+        </div>
+        <div class="gameover-actions">
+            <button id="btn-restart" class="btn-primary">PLAY AGAIN</button>
+            <button id="btn-home" class="btn-secondary">HOME</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- SCRIPTS -->
+<script src="js/coins.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/game.js"></script>
+<script src="js/input.js"></script>
+<script src="js/obstacles.js"></script>
+<script src="js/player.js"></script>
+<script src="js/powerups.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/world.js"></script>
+</body>
+</html>

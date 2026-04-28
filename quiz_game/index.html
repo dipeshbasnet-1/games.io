@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div class="container">
+    
+    <!-- ── Home Screen ── -->
+    <div id="home-screen" class="screen">
+        <header>
+            <h1>Quiz Game</h1>
+            <p class="subtitle">Test your knowledge across 3 categories</p>
+        </header>
+        
+        <div class="category-grid">
+        <button class="cat-card" data-cat="science">
+            <span class="cat-icon">🔬</span>
+            <span class="cat-name">Science</span>
+            <span class="cat-desc">Physics, Chemistry, Biology</span>
+            <span class="cat-count">15 questions</span>
+        </button>
+        <button class="cat-card" data-cat="technology">
+            <span class="cat-icon">💻</span>
+            <span class="cat-name">Technology</span>
+            <span class="cat-desc">CS, Programming, Hardware</span>
+            <span class="cat-count">15 questions</span>
+        </button>
+        <button class="cat-card" data-cat="history">
+            <span class="cat-icon">🏛️</span>
+            <span class="cat-name">History</span>
+            <span class="cat-desc">World History & Events</span>
+            <span class="cat-count">15 questions</span>
+        </button>
+        <button class="cat-card mixed" data-cat="mixed">
+            <span class="cat-icon">🎯</span>
+            <span class="cat-name">Mixed</span>
+            <span class="cat-desc">All categories combined</span>
+            <span class="cat-count">15 questions</span>
+        </button>
+        </div>
+        
+        <div class="difficulty-select">
+        <span class="mode-label">Difficulty:</span>
+        <div class="diff-options">
+            <label class="radio-label"><input type="radio" name="diff" value="easy"> Easy</label>
+            <label class="radio-label"><input type="radio" name="diff" value="medium" checked> Medium</label>
+            <label class="radio-label"><input type="radio" name="diff" value="hard"> Hard</label>
+        </div>
+        </div>
+    </div>
+
+    <!-- ── Quiz Screen ── -->
+    <div id="quiz-screen" class="screen hidden">
+    
+    <div class="quiz-header">
+        <button class="back-btn" id="back-btn">← Back</button>
+        <div class="quiz-meta">
+            <span id="cat-badge" class="cat-badge">Science</span>
+            <span id="q-counter">1 / 15</span>
+        </div>
+        <div class="timer-circle" id="timer-circle">
+            <span id="timer-num">15</span>
+        </div>
+    </div>
+    
+        <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        
+        <div class="score-strip">
+            <span>Score: <strong id="live-score">0</strong></span>
+            <span>Streak: <strong id="live-streak">0</strong> 🔥</span>
+        </div>
+        
+        <div class="question-card" id="question-card">
+            <p class="q-difficulty" id="q-difficulty">Medium</p>
+            <p class="q-text" id="q-text">Question goes here</p>
+        </div>
+        
+        <div class="options-grid" id="options-grid"></div>
+        
+        <button class="btn btn-primary next-btn hidden" id="next-btn">Next Question →</button>
+        <div class="feedback-msg hidden" id="feedback-msg"></div>
+        </div>
+
+    <!-- ── Result Screen ── -->
+    <div id="result-screen" class="screen hidden">
+        <div class="result-hero">
+            <div class="result-medal" id="result-medal">🏆</div>
+            <h2 class="result-grade" id="result-grade">A+</h2>
+            <p class="result-label">Your grade</p>
+        </div>
+        
+        <div class="result-stats">
+        <div class="res-stat">
+            <span class="res-val" id="res-score">0</span>
+            <span class="res-lbl">Score</span>
+        </div>
+        <div class="res-stat">
+            <span class="res-val" id="res-correct">0/15</span>
+            <span class="res-lbl">Correct</span>
+        </div>
+        <div class="res-stat">
+            <span class="res-val" id="res-acc">0%</span>
+            <span class="res-lbl">Accuracy</span>
+        </div>
+        <div class="res-stat">
+            <span class="res-val" id="res-streak">0</span>
+            <span class="res-lbl">Best Streak</span>
+        </div>
+        <div class="res-stat">
+            <span class="res-val" id="res-time">0s</span>
+            <span class="res-lbl">Avg Time</span>
+        </div>
+        <div class="res-stat">
+            <span class="res-val" id="res-best">-</span>
+            <span class="res-lbl">Best Score</span>
+        </div>
+        </div>
+
+        <!-- Review list -->
+        <div class="review-section">
+            <h3>Review Answers</h3>
+            <div class="review-list" id="review-list"></div>
+        </div>
+
+        <div class="result-btns">
+            <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+            <button class="btn btn-outline" id="change-cat-btn">Change Category</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

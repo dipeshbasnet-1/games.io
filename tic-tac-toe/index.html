@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tic Tac Toe AI</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    
+    <div class="container">
+    <header>
+        <h1>Tic Tac Toe</h1>
+        <p class="subtitle">Can you beat the unbeatable AI?</p>
+    </header>
+
+    <!-- Mode selector -->
+    <div class="mode-bar">
+        <button class="mode-btn active" data-mode="ai-hard">vs AI (Hard)</button>
+        <button class="mode-btn" data-mode="ai-easy">vs AI (Easy)</button>
+        <button class="mode-btn" data-mode="2p">2 Players</button>
+    </div>
+
+    <!-- Player choice -->
+    <div class="player-choice" id="player-choice">
+        <span class="choice-label">Play as:</span>
+        <button class="piece-btn active" data-piece="X">X (First)</button>
+        <button class="piece-btn" data-piece="O">O (Second)</button>
+    </div>
+
+    <!-- Score bar -->
+    <div class="scoreboard">
+        <div class="score-card you">
+            <span class="score-num" id="score-x">0</span>
+            <span class="score-lbl" id="lbl-x">You (X)</span>
+        </div>
+    <div class="score-card draw">
+        <span class="score-num" id="score-d">0</span>
+        <span class="score-lbl">Draw</span>
+    </div>
+    <div class="score-card ai">
+        <span class="score-num" id="score-o">0</span>
+        <span class="score-lbl" id="lbl-o">AI (O)</span>
+    </div>
+    </div>
+
+    <!-- Status -->
+    <div class="status-bar" id="status-bar">
+        <div class="status-icon" id="status-icon">X</div>
+        <span id="status-text">Your turn</span>
+    </div>
+
+    <!-- Board -->
+    <div class="board" id="board">
+        <div class="cell" data-i="0"></div>
+        <div class="cell" data-i="1"></div>
+        <div class="cell" data-i="2"></div>
+        <div class="cell" data-i="3"></div>
+        <div class="cell" data-i="4"></div>
+        <div class="cell" data-i="5"></div>
+        <div class="cell" data-i="6"></div>
+        <div class="cell" data-i="7"></div>
+        <div class="cell" data-i="8"></div>
+        <!-- Win line drawn by JS -->
+        <svg class="win-line" id="win-svg" viewBox="0 0 3 3" preserveAspectRatio="none">
+            <line id="win-line" x1="0" y1="0" x2="0" y2="0"
+                stroke="#ffd700" stroke-width="0.12"
+                stroke-linecap="round" opacity="0"/>
+        </svg>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn btn-primary" id="new-btn">New Game</button>
+        <button class="btn btn-outline" id="reset-score-btn">Reset Score</button>
+    </div>
+</div>
+
+<script src="tictactoe.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+.container{
+  width:420px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  text-align:center;
+}
+
+h1{
+  margin-bottom:10px;
+}
+
+.subtitle{
+  font-size:13px;
+  opacity:.7;
+  margin-bottom:15px;
+}
+
+/* Mode */
+.mode{
+  margin-bottom:15px;
+}
+.mode-btn{
+  padding:6px 14px;
+  margin:2px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.1);
+  color:white;
+}
+.mode-btn.active{
+  background:#f72585;
+}
+
+/* Score */
+.scoreboard{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+/* Arena */
+.arena{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:20px 0;
+}
+
+.player{
+  text-align:center;
+}
+
+.player div{
+  font-size:40px;
+  margin-top:10px;
+}
+
+.center{
+  text-align:center;
+}
+
+/* Choices */
+.choices{
+  display:flex;
+  justify-content:space-between;
+  margin:20px 0;
+}
+
+.choice{
+  flex:1;
+  margin:5px;
+  padding:12px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.08);
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.choice:hover{
+  transform:scale(1.1);
+  background:rgba(255,255,255,0.2);
+}
+
+.choice span{
+  display:block;
+  font-size:24px;
+}
+
+/* History */
+.history{
+  font-size:12px;
+  opacity:.7;
+}
+
+/* Insight */
+.insight{
+  margin-top:10px;
+  font-size:12px;
+  opacity:.8;
+}
+
+/* Buttons */
+.controls{
+  margin-top:15px;
+}
+
+button{
+  padding:8px 16px;
+  margin:5px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}

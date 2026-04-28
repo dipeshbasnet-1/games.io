@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Memory Game</h1>
+        <p class="subtitle">Flip cards and find matching pairs</p>
+    </header>
+
+    <!-- Grid size selector -->
+    <div class="size-bar">
+        <span class="size-label">Grid:</span>
+        <button class="size-btn" data-size="4">4 × 4</button>
+        <button class="size-btn active" data-size="5">5 × 4</button>
+        <button class="size-btn" data-size="6">6 × 6</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+        <span class="stat-value" id="moves">0</span>
+        <span class="stat-label">Moves</span>
+        </div>
+        <div class="stat-card">
+        <span class="stat-value" id="pairs">0</span>
+        <span class="stat-label">Pairs</span>
+        </div>
+        <div class="stat-card">
+        <span class="stat-value" id="timer">0:00</span>
+        <span class="stat-label">Time</span>
+        </div>
+        <div class="stat-card">
+        <span class="stat-value" id="best-moves">—</span>
+        <span class="stat-label">Best</span>
+        </div>
+    </div>
+
+    <!-- Board -->
+    <div class="board-area">
+        <div class="board" id="board"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn btn-primary" id="new-btn">New Game</button>
+        <button class="btn btn-outline" id="peek-btn">👁 Peek (3s)</button>
+    </div>
+
+    <!-- Win banner (hidden) -->
+    <div class="win-banner hidden" id="win-banner">
+        <div class="win-icon">🎉</div>
+        <h2>You Win!</h2>
+        <p id="win-stats"></p>
+        <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+    </div>
+    </div>
+    
+<script src="memory.js"></script>
+</body>
+</html>

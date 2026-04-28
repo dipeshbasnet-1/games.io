@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whack-a-Mole</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Whack-a-Mole!</h1>
+      <p class="subtitle">Hit the moles before they hide!</p>
+    </header>
+
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-val" id="score">0</span>
+        <span class="hud-lbl">Score</span>
+      </div>
+      <div class="hud-item combo-item">
+        <span class="hud-val" id="combo">x1</span>
+        <span class="hud-lbl">Combo</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-val" id="misses">0</span>
+        <span class="hud-lbl">Misses</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-val" id="best">0</span>
+        <span class="hud-lbl">Best</span>
+      </div>
+    </div>
+
+    <!-- Timer bar -->
+    <div class="timer-wrap">
+      <div class="timer-bar">
+        <div class="timer-fill" id="timer-fill"></div>
+      </div>
+      <span class="timer-text" id="timer-text">30s</span>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="diff-bar">
+      <span class="diff-label">Mode:</span>
+      <button class="diff-btn" data-time="30" data-diff="easy">Easy (30s)</button>
+      <button class="diff-btn active" data-time="30" data-diff="normal">Normal (30s)</button>
+      <button class="diff-btn" data-time="45" data-diff="hard">Hard (45s)</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid" id="grid"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-primary" id="start-btn">▶ Start Game</button>
+    </div>
+
+    <div class="result-msg hidden" id="result-msg"></div>
+  </div>
+
+  <script src="whackamole.js"></script>
+</body>
+</html>

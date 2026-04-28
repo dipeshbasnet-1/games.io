@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Rock Paper Scissors</h1>
+  <p class="subtitle">AI learns your patterns 🧠</p>
+
+  <!-- Mode -->
+  <div class="mode">
+    <button class="mode-btn active" data-mode="classic">Classic</button>
+    <button class="mode-btn" data-mode="extended">Extended</button>
+  </div>
+
+  <!-- Score -->
+  <div class="scoreboard">
+    <div>You: <span id="you">0</span></div>
+    <div>Draw: <span id="draw">0</span></div>
+    <div>AI: <span id="ai">0</span></div>
+  </div>
+
+  <!-- Arena -->
+  <div class="arena">
+    <div class="player">
+      <p>You</p>
+      <div id="you-move">❓</div>
+    </div>
+
+    <div class="center">
+      <div id="result">Choose your move</div>
+      <div>Round <span id="round">1</span></div>
+    </div>
+
+    <div class="player">
+      <p>AI</p>
+      <div id="ai-move">❓</div>
+    </div>
+  </div>
+
+  <!-- Choices -->
+  <div id="choices" class="choices"></div>
+
+  <!-- History -->
+  <div class="history">
+    Last 10: <span id="history"></span>
+  </div>
+
+  <!-- Insight -->
+  <div class="insight" id="insight">
+    Play few rounds to see AI analysis...
+  </div>
+
+  <!-- Buttons -->
+  <div class="controls">
+    <button id="reset">Reset</button>
+    <button id="new">New Game</button>
+  </div>
+
+</div>
+
+<script src="rps.js"></script>
+</body>
+</html>
