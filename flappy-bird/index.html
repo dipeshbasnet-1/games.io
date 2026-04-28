@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Flappy Bird</h1>
+    </header>
+    
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-value" id="score">0</span>
+        <span class="hud-label">Score</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-value" id="best">0</span>
+        <span class="hud-label">Best</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-value" id="speed-display">1x</span>
+        <span class="hud-label">Speed</span>
+      </div>
+    </div>
+    
+    <div class="canvas-wrapper" id="canvas-wrapper">
+      <canvas id="game-canvas" width="360" height="540"></canvas>
+    </div>
+    
+    <p class="hint">Click / Space / Tap to flap</p>
+    
+    <div class="controls">
+      <button class="btn btn-primary" id="new-btn">New Game</button>
+      <select class="select-skin" id="skin-select">
+        <option value="yellow">Yellow Bird</option>
+        <option value="red">Red Bird</option>
+        <option value="blue">Blue Bird</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="bird.js"></script>
+</body>
+</html>
